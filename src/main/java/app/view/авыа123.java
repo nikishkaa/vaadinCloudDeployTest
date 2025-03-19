@@ -1,8 +1,9 @@
-package app.view.grid;
+package app.view;
 
 import app.model.entity.Child;
 import app.model.entity.Father;
 import app.service.TableService;
+import app.view.grid.ListedGrid;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -16,7 +17,7 @@ import java.util.Set;
 
 
 @Route
-public class MainView123 extends VerticalLayout {
+public class авыа123 extends VerticalLayout {
 
     TableService tableService;
 
@@ -32,7 +33,7 @@ public class MainView123 extends VerticalLayout {
     Button toRightButton;
 
     @Autowired
-    public MainView123(TableService tableService){
+    public авыа123(TableService tableService){
 
         this.tableService = tableService;
 
