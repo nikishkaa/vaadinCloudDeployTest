@@ -1,37 +1,37 @@
-name: 'Test Container Action'
-
-on:
-  pull_request:
-    types: [opened] # PR open시 자동 코드 리뷰 요청
-
-permissions:
-  contents: read   # 콘텐츠 접근 권한 (PR 변경 사항 읽기)
-  pull-requests: write # PR comment 작성 권한
-
-jobs:
-  test-action:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-
-      - name: Run Container Action
-        uses: ljy2855/llm_code_reviewer@v1
-        with:
-          # fixed field
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          github_owner: ${{ github.repository_owner }}
-          github_repository: ${{ github.repository }}
-          pr_number: ${{ github.event.pull_request.number }}
-          pr_title: ${{ github.event.pull_request.title }}
-          pr_body: ${{ github.event.pull_request.body }}
-
-          # you might fill
-          ollama_api_url: 'http://192.168.1.104:11434'
-
-
-          # optional field
-          ollama_model: 'llama3.1:14b'
-          prompt_type: 'GENERAL_REVIEW'
-          prompt_language: 'EN'
+#name: 'Test Container Action'
+#
+#on:
+#  pull_request:
+#    types: [opened] # PR open시 자동 코드 리뷰 요청
+#
+#permissions:
+#  contents: read   # 콘텐츠 접근 권한 (PR 변경 사항 읽기)
+#  pull-requests: write # PR comment 작성 권한
+#
+#jobs:
+#  test-action:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout code
+#        uses: actions/checkout@v4
+#        with:
+#
+#      - name: Run Container Action
+#        uses: ljy2855/llm_code_reviewer@v1
+#        with:
+#          # fixed field
+#          github_token: ${{ secrets.GITHUB_TOKEN }}
+#          github_owner: ${{ github.repository_owner }}
+#          github_repository: ${{ github.repository }}
+#          pr_number: ${{ github.event.pull_request.number }}
+#          pr_title: ${{ github.event.pull_request.title }}
+#          pr_body: ${{ github.event.pull_request.body }}
+#
+#          # you might fill
+#          ollama_api_url: 'http://192.168.1.104:11434'
+#
+#
+#          # optional field
+#          ollama_model: 'llama3.1:14b'
+#          prompt_type: 'GENERAL_REVIEW'
+#          prompt_language: 'EN'
