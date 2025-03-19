@@ -6,6 +6,8 @@ jobs:
   summarize:
     runs-on: ubuntu-latest
     steps:
+      - name: Install ollama
+        run: curl -fsSL https://ollama.com/install.sh | sh
       - name: Run ollama
         run: |
           ollama serve &
@@ -19,7 +21,7 @@ jobs:
         run: |
           git checkout ${{ github.base_ref }}
           git pull
-          command="ollama run deepseek-r1:8b"
+          command="ollama run llama3.2:latest"
           git checkout ${{ github.head_ref }}
           echo "Reviewing Pull Request for branch $(git branch --show) : "
           mycode=$(git diff ${{ github.base_ref }})
