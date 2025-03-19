@@ -11,7 +11,7 @@ jobs:
       - name: Run ollama
         run: |
           ollama serve &
-          ollama pull llama3.2:latest
+          ollama pull deepseek-r1:14b
       - name: Checkout pull request HEAD
         id: checkout_pr_head
         uses: actions/checkout@v2
