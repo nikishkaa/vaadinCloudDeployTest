@@ -3,21 +3,23 @@ package app.view;
 import app.model.entity.Child;
 import app.model.entity.Father;
 import app.service.TableService;
-import app.view.grid.ListedGrid;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.radiobutton.RadioButtonGroup;
 import com.vaadin.flow.router.Route;
+import app.view.grid.ListedGrid;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
 
 @Route
-public class test extends VerticalLayout {
+public class newtest extends VerticalLayout {
 
     TableService tableService;
 
@@ -33,7 +35,7 @@ public class test extends VerticalLayout {
     Button toRightButton;
 
     @Autowired
-    public test(TableService tableService){
+    public newtest(TableService tableService){
 
         this.tableService = tableService;
 
